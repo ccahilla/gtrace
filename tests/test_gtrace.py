@@ -96,11 +96,15 @@ M1 = opt.Mirror(HRcenter=[2, 0], normAngleHR=deg2rad(170),
 
 beams = M1.hitFromHR(b, order=2)
 
+
+
 cnv = draw.Canvas()
-cnv.add_layer("main_beam", color=(0,0,0))
-cnv.add_layer("main_beam_width", color=(0,0,1))
+cnv.add_layer("main_beam", color=(250,0,0))
+cnv.add_layer("Mirrors", color=(135,211,248))
+cnv.add_layer("text", color=(135,248,211))
 drawAllBeams(cnv, list(beams.values()), drawWidth=True, sigma=2.7,  layer='main_beam')
-M1.draw(cnv, drawName=True)
+# M1.draw(cnv, drawName=True)
+drawAllOptics(cnv, [M1], drawName=True)
 renderer.renderDXF(cnv, 'Test.dxf')
 
 #}}}

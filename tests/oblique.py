@@ -25,8 +25,8 @@ import copy
 from scipy.constants import c
 from multiprocessing import Process, Pipe, cpu_count
 import time
-import sharedmem as shm
-from paralleltools import distribute1DArray, parallelize
+# import sharedmem as shm
+# from paralleltools import distribute1DArray, parallelize
 import pickle
 
 #}}}

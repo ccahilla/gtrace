@@ -66,7 +66,7 @@ cnv = draw.Canvas()
 cnv.add_layer("main_beam", color=(0,0,0))
 
 #Draw all beams
-beamList = beams.values()
+beamList = list(beams.values())
 drawAllBeams(cnv, beamList, drawWidth=True, sigma=3.0, drawPower=False,
                  drawROC=False, drawGouy=False, drawOptDist=False, layer='main_beam',
                     fontSize=0.01)
@@ -99,7 +99,7 @@ beams = M1.hitFromHR(b, order=2)
 cnv = draw.Canvas()
 cnv.add_layer("main_beam", color=(0,0,0))
 cnv.add_layer("main_beam_width", color=(0,0,1))
-drawAllBeams(cnv, beams.values(), drawWidth=True, sigma=2.7,  layer='main_beam')
+drawAllBeams(cnv, list(beams.values()), drawWidth=True, sigma=2.7,  layer='main_beam')
 M1.draw(cnv, drawName=True)
 renderer.renderDXF(cnv, 'Test.dxf')
 
