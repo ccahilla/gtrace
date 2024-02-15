@@ -103,8 +103,8 @@ cnv.add_layer("main_beam", color=(250,0,0))
 cnv.add_layer("Mirrors", color=(135,211,248))
 cnv.add_layer("text", color=(135,248,211))
 drawAllBeams(cnv, list(beams.values()), drawWidth=True, sigma=2.7,  layer='main_beam')
-# M1.draw(cnv, drawName=True)
-drawAllOptics(cnv, [M1], drawName=True)
+M1.draw(cnv, drawName=True, name_y_offset=-15*cm)
+# drawAllOptics(cnv, [M1], drawName=True)
 renderer.renderDXF(cnv, 'Test.dxf')
 
 #}}}

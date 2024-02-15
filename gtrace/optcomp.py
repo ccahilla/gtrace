@@ -477,7 +477,7 @@ class Mirror(Optics):
 
 #{{{ Draw
 
-    def draw(self, cv, drawName=False):
+    def draw(self, cv, drawName=False, name_x_offset=0, name_y_offset=0):
         '''
         Draw itself
         '''
@@ -546,7 +546,7 @@ class Mirror(Optics):
             center = (p1+p2+p3+p4)/4.
             height = self.thickness/4.
             width = height*len(self.name)
-            center = center - np.array([width/2, height/2])
+            center = center - np.array([width/2, height/2]) + np.array([name_x_offset, name_y_offset])
             cv.add_shape(draw.Text(text=self.name, point=center,height=height),
                          layername="text")
             # dxf.append(sdxf.Text(text=self.name, point=center, #
@@ -1779,7 +1779,7 @@ class CyMirror(Mirror):
 
 #{{{ Draw
 
-    def draw(self, cv, drawName=False):
+    def draw(self, cv, drawName=False, name_x_offset=0, name_y_offset=0):
         '''
         Draw itself
         '''
@@ -1855,7 +1855,7 @@ class CyMirror(Mirror):
             center = (p1+p2+p3+p4)/4.
             height = self.thickness/4.
             width = height*len(self.name)
-            center = center - np.array([width/2, height/2])
+            center = center - np.array([width/2, height/2]) + np.array([name_x_offset, name_y_offset])
             cv.add_shape(draw.Text(text=self.name, point=center,height=height),
                          layername="text")
             # dxf.append(sdxf.Text(text=self.name, point=center, #
