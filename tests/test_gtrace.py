@@ -88,7 +88,7 @@ renderer.renderDXF(cnv, 'test.dxf')
 q0 = gauss.Rw2q(np.inf, 0.1*mm)
 b = beam.GaussianBeam(q0=q0, wl=1064*nm, pos=[0.0,0.0], dirAngle=0.0)
 
-M1 = opt.Mirror(HRcenter=[2, 0], normAngleHR=deg2rad(170),
+M1 = opt.Mirror(HRcenter=[2, 0], normAngleHR=deg2rad(135),
                  diameter=25*cm, thickness=10*cm,
                  wedgeAngle=deg2rad(0.25), inv_ROC_HR=1./2.3,
                  Refl_HR=0.9, Trans_HR=1-0.9,
